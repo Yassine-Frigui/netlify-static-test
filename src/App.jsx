@@ -17,9 +17,11 @@ function App() {
         headers: {
           'Content-Type': 'application/json'
         },
+        mode: 'cors',
         body: JSON.stringify(payload)
       })
       const data = await response.json()
+      console.log('date now is', payload.date_time )
       setMessage(data.message || 'Data sent successfully')
     } catch (error) {
       setMessage('Error sending data: ' + error.message)
